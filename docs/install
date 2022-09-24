@@ -20,6 +20,11 @@ then
         mingw-w64 binutils-mingw-w64 g++-mingw-w64
 fi
 
+if [ -n "$(command -v pacman)" ]
+then
+    pacman -Sy --noconfirm gnupg curl gcc make mingw-w64-gcc
+fi
+
 # Curl
 if ! command -v curl &> /dev/null
 then
